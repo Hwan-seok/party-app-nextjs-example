@@ -1,0 +1,13 @@
+{
+  "debug.node.autoAttach": "on",
+  "files.autoSave": "onFocusChange",
+  "cSpell.ignoreWords": [
+    "khtml",
+    "lostid",
+    "lostpassword",
+    "navercallback",
+    "privacyrule",
+    "refundrule",
+    "userule"
+  ]
+}

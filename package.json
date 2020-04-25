@@ -1,23 +1,32 @@
 {
-  "name": "with-typescript-styled-components",
+  "name": "wierd",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "dotenv -e local.env next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "dotenv": "^8.2.0",
     "next": "latest",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "styled-components": "^5.0.0"
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3"
   },
   "devDependencies": {
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@types/styled-components": "5.0.1",
-    "babel-plugin-styled-components": "^1.10.0",
+    "@types/redux": "^3.6.0",
+    "@types/redux-saga": "^0.10.5",
+    "babel-plugin-emotion": "^10.0.33",
+    "dotenv-cli": "^3.1.0",
+    "eslint": "^6.8.0",
     "typescript": "3.5.2"
   },
   "license": "ISC"
