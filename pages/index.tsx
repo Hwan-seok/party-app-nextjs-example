@@ -1,9 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import CalenderPageTemplate from '../src/templates/CalendarPageTempate';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`;
-
-export default () => <Title>My page</Title>;
+export default () => <CalenderPageTemplate />;
