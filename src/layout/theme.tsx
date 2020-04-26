@@ -1,6 +1,7 @@
 const theme = {
   color: {
     primary: '#006cb3',
+    disable: '#c6c6c6',
     subText: '#707070',
     disabledText: '#c6c6c6',
     black: '#000000',

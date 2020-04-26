@@ -12,7 +12,6 @@ import Head from 'next/head';
 
 import NProgress from 'nprogress';
 import Router from 'next/router';
-import 'react-calendar/dist/Calendar.css';
 import Layout from 'src/layout';
 
 NProgress.configure({
