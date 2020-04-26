@@ -7,13 +7,16 @@ import storage from 'redux-persist/lib/storage';
 
 import rootSaga from './rootSaga';
 
+import partyReducer from './party/party.reducer';
+import alarmReducer from './alarm/alarm.reducer';
+
 const persistConfig = {
   key: 'primary',
   storage,
   whitelist: ['AccountReducer'],
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({ partyReducer, alarmReducer });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
