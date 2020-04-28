@@ -3,5 +3,5 @@ import partySagas from './party/party.saga';
 import alarmSagas from './alarm/alarm.saga';
 
 export default function* rootSaga() {
-  yield all([alarmSagas, partySagas]);
+  yield all([...alarmSagas, ...partySagas]);
 }

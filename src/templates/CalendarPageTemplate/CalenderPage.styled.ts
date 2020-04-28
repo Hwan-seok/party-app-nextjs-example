@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import theme from 'src/layout/theme';
 
-export const StyledCalenderPage = styled.div``;
+export const StyledCalenderPage = styled.div`
+  min-height: 100vh;
+`;
 
 export const StyledHeadline = styled.div`
   font-weight: bold;
@@ -16,6 +18,7 @@ export const StyledHeadline = styled.div`
   }
 
   .head-alarm-icon {
+    cursor: pointer;
     display: flex;
     align-items: center;
     position: relative;
@@ -33,6 +36,93 @@ export const StyledHeadline = styled.div`
       align-items: center;
       border-radius: 50%;
     }
+  }
+`;
+
+interface BottomBannerStyleProps {
+  show: boolean;
+}
+
+export const StyledUpdatePartyBanner = styled.div`
+  /* display: ${(props: BottomBannerStyleProps) =>
+    props.show ? 'block' : 'none'}; */
+  position: fixed;
+  bottom: calc(-256 / 575 * 100%);
+  left: 0;
+  background: white;
+  width: 100%;
+  height: calc(256 / 575 * 100%);
+  transform: ${(props) => (props.show ? 'translateY(-100%)' : 'initial')};
+  box-shadow: 0px 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  hr{
+    margin:0;
+    border-color: rgb(0,0,0,0.02);
+  }
+
+  .update-line{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+    padding:12px 12px 12px 24px;
+
+    .selected-count{
+      font-size:1.25rem;
+      font-weight:bold;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .goto-update-button{
+      border-radius:2px;
+      font-size:0.875rem;
+      color:white;
+      padding:14px 54px;
+      background-color:${theme.color.primary};
+      cursor: pointer;
+    }
+  }
+
+`;
+
+export const StyledPartyLineOnDay = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 6.4%;
+
+  .party-image {
+    width: 16%;
+    height: 16%;
+    > img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  .party-texts {
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0 6.4%;
+
+    .name {
+      font-weight: 500;
+    }
+    .location {
+      color: #707070;
+    }
+  }
+  .update-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 `;
 
@@ -74,7 +164,6 @@ export const DefaultCalenderStyles = styled.div`
     cursor: pointer;
   }
   .react-calendar__navigation {
-    height: 44px;
   }
   .react-calendar__navigation__arrow {
     display: none;

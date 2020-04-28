@@ -6,7 +6,7 @@ const initialState = {
   alarms: [],
 };
 
-const AlarmReducer = (
+const alarmReducer = (
   state: AlarmReducerState = initialState,
   action: AlarmAction,
 ): AlarmReducerState => {
@@ -21,4 +21,4 @@ const AlarmReducer = (
   }
 };
 
-export default AlarmReducer;
+export default alarmReducer;

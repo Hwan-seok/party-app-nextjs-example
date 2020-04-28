@@ -2,7 +2,7 @@
   "name": "wierd",
   "version": "1.0.0",
   "scripts": {
-    "dev": "dotenv -e local.env next",
+    "dev": "dotenv -e env/local.env next",
     "build": "next build",
     "start": "next start"
   },
@@ -11,6 +11,7 @@
     "@emotion/styled": "^10.0.27",
     "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
+    "dayjs": "^1.8.25",
     "dotenv": "^8.2.0",
     "next": "latest",
     "next-redux-saga": "^4.1.2",

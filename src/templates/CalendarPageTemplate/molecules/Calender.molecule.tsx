@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Calendar from 'react-calendar';
 import dayjs from 'dayjs';
 import { DefaultCalenderStyles } from '../CalenderPage.styled';
@@ -7,11 +7,12 @@ import { dateAlreadyClicked, datesExcept } from './helper/filterDates';
 interface CalendarProps {
   dayTileClass: string;
   activeDayClass: string;
+  openBottomBanner: Function;
+  dates: Array<Date>;
+  setDates: Function;
 }
 
 const CalenderMolecule = (props: CalendarProps) => {
-  const [dates, setDates] = useState([]);
-
   useEffect(() => {
     const calendarFirstDayElem = document.querySelector(
       '.react-calendar__month-view__days__day:first-child',
@@ -26,19 +27,27 @@ const CalenderMolecule = (props: CalendarProps) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (props.dates.length > 0) {
+      props.openBottomBanner(true);
+    } else {
+      props.openBottomBanner(false);
+    }
+  }, [props.dates]);
+
   const onClickDay = (date: Date) => {
     // if day is already clicked, remove it from state
-    if (dateAlreadyClicked(dates, date)) {
-      setDates(datesExcept(dates, date));
+    if (dateAlreadyClicked(props.dates, date)) {
+      props.setDates(datesExcept(props.dates, date));
     } else {
-      setDates([...dates, date]);
+      props.setDates([...props.dates, date]);
     }
   };
 
   const tileClassName = ({ date }: { date: Date }) => {
     const classNames = [props.dayTileClass];
     // give active days a special class
-    if (dateAlreadyClicked(dates, date)) {
+    if (dateAlreadyClicked(props.dates, date)) {
       return [props.activeDayClass, ...classNames];
     }
     return classNames;
